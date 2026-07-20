@@ -43,11 +43,14 @@ class AdminController extends Controller
     function insert(Request $request){
         $request->validate([
         'title' => 'required|max:50',
-        'content' => 'required'
+        'content' => 'required',
+        'email' => 'required|email'
     ],[
-        'title.required' => 'กรุณากรอกชื่อบทความ',
-        'title.max' => 'ชื่อบทความไม่เกิน 50 ตัวอักษร',
-        'content.required' => 'กรุณากรอกเนื้อหาบทความ'
+        'title.required' => 'กรุณากรอกรหัสสินค้า',
+        'title.max' => 'ชื่อรหัสสินค้า 50 ตัวอักษร',
+        'content.required' => 'กรุณากรอกอาการชำรุด',
+        'email.required' => 'กรุณากรอกอีเมลผู้ติดต่อ',
+        'email.email' => 'รูปแบบอีเมลไม่ถูกต้อง'
     ]);
 }
 }
